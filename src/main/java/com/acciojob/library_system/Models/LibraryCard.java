@@ -25,7 +25,7 @@ public class LibraryCard {
     private CardStatus cardStatus;
 
 //this has to be written in child class
-    @JoinColumn(referencedColumnName = "emailId") //  by default it adds the PK, incase you add any other column
+    @JoinColumn //  by default it adds the PK, incase you add any other column
     @OneToOne  //Mapping between entries
 
     private Student student; //which entity you have connected

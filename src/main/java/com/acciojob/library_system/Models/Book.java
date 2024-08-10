@@ -15,15 +15,18 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bookId;
 
     private String bookName;
 
     private Integer noOfPages;
 
-    private String authorName;
-
 @Enumerated(value = EnumType.STRING)
     private Genre genre;
+
+    @JoinColumn
+    @ManyToOne
+    private Author author;
 
 }
